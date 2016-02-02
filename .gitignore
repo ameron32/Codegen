@@ -39,4 +39,6 @@ proguard/
 captures/
 
 # Secret Keys
+/captures
+
 strings_keys.xml
