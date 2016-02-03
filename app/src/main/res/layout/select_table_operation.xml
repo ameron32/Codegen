@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:paddingLeft="@dimen/dp16"
+              android:paddingRight="@dimen/dp16">
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp48"
+            android:text="@string/table_operations_title_template"
+            android:id="@+id/tableOperationsTitle"
+            android:layout_marginBottom="@dimen/dp4"
+            android:gravity="center"
+            android:textSize="@dimen/text_medium"/>
+
+    <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/tableOperationsList"
+            android:layout_marginTop="@dimen/dp4"/>
+
+</LinearLayout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.ameron32.apps.demo.codegen"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+  <uses-permission android:name="android.permission.WAKE_LOCK"/>
+  <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+  <uses-permission android:name="com.ameron32.apps.demo.codegen.permission.C2D_MESSAGE"/>
+
+  <permission
+      android:name="com.ameron32.apps.demo.codegen.permission.C2D_MESSAGE"
+      android:protectionLevel="signature"/>
+
+  <application
+      android:name=".data.crud.common.DataApplication"
+      android:allowBackup="true"
+      android:icon="@mipmap/ic_launcher"
+      android:label="@string/app_name"
+      android:supportsRtl="true"
+      android:theme="@style/AppTheme">
+    <activity
+        android:name=".MainActivity"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme.NoActionBar">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
+
+    <activity
+        android:name=".data.crud.start.SelectTableActivity"
+        android:label="@string/app_name"/>
+    <activity
+        android:name=".login.LoginActivity"
+        android:label="@string/app_name"/>
+    <activity
+        android:name=".messaging.ChooseNicknameActivity"
+        android:label="@string/app_name"
+        android:screenOrientation="portrait"/>
+
+    <activity android:name=".data.crud.start.SelectTableOperationActivity"/>
+    <activity android:name=".data.crud.create.CreateRecordActivity"/>
+    <activity android:name=".data.crud.create.CreateSuccessActivity"/>
+    <activity android:name=".data.crud.common.SendEmailActivity"/>
+    <activity android:name=".data.crud.retrieve.SelectRetrievalTypeActivity"/>
+    <activity android:name=".data.crud.delete.DeleteRecordActivity"/>
+    <activity android:name=".data.crud.delete.DeleteSuccessActivity"/>
+    <activity android:name=".data.crud.update.UpdateRecordActivity"/>
+    <activity android:name=".data.crud.update.UpdateSuccessActivity"/>
+    <activity android:name=".data.crud.retrieve.ShowByPropertyActivity"/>
+    <activity android:name=".data.crud.retrieve.RetrieveRecordActivity"/>
+    <activity android:name=".data.crud.retrieve.ShowEntityActivity"/>
+    <activity android:name=".login.PasswordRecoveryRequestedActivity"/>
+    <activity android:name=".login.RegisterActivity"/>
+    <activity android:name=".login.RegistrationSuccessActivity"/>
+    <activity android:name=".login.RestorePasswordActivity"/>
+    <activity android:name=".login.LoginSuccessActivity"/>
+
+    <receiver
+        android:name=".messaging.PushReceiver"
+        android:permission="com.google.android.c2dm.permission.SEND">
+      <intent-filter>
+        <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+        <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+
+        <category android:name="com.ameron32.apps.demo.codegen"/>
+      </intent-filter>
+    </receiver>
+
+    <activity
+        android:name=".messaging.AcceptChatActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".messaging.ChatActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".messaging.SelectUserActivity"
+        android:screenOrientation="portrait"/>
+
+    <service android:name="com.backendless.AndroidService"/>
+  </application>
+
+</manifest>
